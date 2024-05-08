@@ -200,7 +200,8 @@
     <!-- FIM DO MENU -->
 
     <!-- INÍCIO MODAL CART -->
-    <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden">
+    <div id="cart-modal" 
+    class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden">
 
         <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
 
@@ -221,7 +222,7 @@
                 <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
 
                 <div class="flex-items-center justify-between mt-5 w-full">
-                    <button id="class-modal-btn">Fechar</button>
+                    <button id="cart-modal-btn">Fechar</button>
                     <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar pedido</button>
                 </div>
 
@@ -241,6 +242,8 @@
         </button>
     </footer>
     <!-- FIM BUTTON CART FOOTER -->
+    <script src="script.js"></script>
+
 </body>
 
 </html>
