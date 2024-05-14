@@ -77,7 +77,7 @@ function updateCartModal() {
                     <p class= "font-medium mt-0">R$ ${item.price.toFixed(2)}</p>
                 </div>            
 
-                    <button>
+                    <button class="remove-from-cart-btn" data-name="${item.name}">
                         remover
                     </button>
                 
@@ -94,8 +94,18 @@ function updateCartModal() {
     cartTotal.textContent = total.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL"
-    })
+    });
 
     cartCounter.innerHTML = cart.length;
 
 }
+
+// FUNÇÃO PARA REMOVER DO CARRINHO
+
+cartItemsContainer.addEventListener("click", function (event){
+    if(event.target.classList.contains("remove-from-cart-btn")){
+        const name = event.target.getAttribute("data-name")
+
+        console.log(name);
+    }
+    })
