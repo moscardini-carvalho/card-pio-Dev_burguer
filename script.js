@@ -71,11 +71,10 @@ function updateCartModal() {
         cartItemElement.classList.add("flex", "justify-between", "mb-4", "flex-col")
         cartItemElement.innerHTML = `
            <div class= "flex items-center, justify-between"> 
-            <div>
                 <div>
                     <p class= "font-medium">${item.name}</p>
                     <p>Qtd: ${item.quantity}</p>
-                    <p class= "font-medium mt-0">R$ ${item.price}</p>
+                    <p class= "font-medium mt-0">R$ ${item.price.toFixed(2)}</p>
                 </div>            
 
                     <button>
@@ -85,10 +84,18 @@ function updateCartModal() {
             </div>
           `
 
+        total += item.price * item.quantity;
+
+
         cartItemsContainer.appendChild(cartItemElement)
 
     })
 
+    cartTotal.textContent = total.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    })
 
+    cartCounter.innerHTML = cart.length;
 
 }
